@@ -1,0 +1,497 @@
+<!DOCTYPE html><html class="default" lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>Mist - v1.0.0</title><meta name="description" content="Documentation for Mist - v1.0.0"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="assets/style.css"/><link rel="stylesheet" href="assets/highlight.css"/><script async src="assets/search.js" id="search-script"></script></head><body><script>document.documentElement.dataset.theme = localStorage.getItem("tsd-theme") || "os"</script><header class="tsd-page-toolbar">
+<div class="tsd-toolbar-contents container">
+<div class="table-cell" id="tsd-search" data-base=".">
+<div class="field"><label for="tsd-search-field" class="tsd-widget search no-caption"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M15.7824 13.833L12.6666 10.7177C12.5259 10.5771 12.3353 10.499 12.1353 10.499H11.6259C12.4884 9.39596 13.001 8.00859 13.001 6.49937C13.001 2.90909 10.0914 0 6.50048 0C2.90959 0 0 2.90909 0 6.49937C0 10.0896 2.90959 12.9987 6.50048 12.9987C8.00996 12.9987 9.39756 12.4863 10.5008 11.6239V12.1332C10.5008 12.3332 10.5789 12.5238 10.7195 12.6644L13.8354 15.7797C14.1292 16.0734 14.6042 16.0734 14.8948 15.7797L15.7793 14.8954C16.0731 14.6017 16.0731 14.1267 15.7824 13.833ZM6.50048 10.499C4.29094 10.499 2.50018 8.71165 2.50018 6.49937C2.50018 4.29021 4.28781 2.49976 6.50048 2.49976C8.71001 2.49976 10.5008 4.28708 10.5008 6.49937C10.5008 8.70852 8.71314 10.499 6.50048 10.499Z" fill="var(--color-text)"></path></svg></label><input type="text" id="tsd-search-field" aria-label="Search"/></div>
+<ul class="results">
+<li class="state loading">Preparing search index...</li>
+<li class="state failure">The search index is not available</li></ul><a href="index.html" class="title">Mist - v1.0.0</a></div>
+<div class="table-cell" id="tsd-widgets"><a href="#" class="tsd-widget menu no-caption" data-toggle="menu" aria-label="Menu"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="1" y="3" width="14" height="2" fill="var(--color-text)"></rect><rect x="1" y="7" width="14" height="2" fill="var(--color-text)"></rect><rect x="1" y="11" width="14" height="2" fill="var(--color-text)"></rect></svg></a></div></div></header>
+<div class="container container-main">
+<div class="col-8 col-content">
+<div class="tsd-page-title">
+<h2>Mist - v1.0.0</h2></div>
+<div class="tsd-panel tsd-typography"><!-- ctrl + shift + v to preview -->
+
+<a href="#table-of-contents" id="table-of-contents" style="color: inherit; text-decoration: none;">
+  <h1>Table of Contents</h1>
+</a>
+<ol>
+<li><a href="#getting-started">Getting Started</a><ol>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#quick-start">Quick Start</a></li>
+</ol>
+</li>
+<li><a href="#essentials">Essentials</a><ol>
+<li><a href="#creating-an-application">Creating an Application</a></li>
+<li><a href="#template-syntax">Template Syntax</a></li>
+<li><a href="#event-handling">Event Handling</a></li>
+<li><a href="#components-basics">Components Basics</a></li>
+<li><a href="#m_if-m_if_else-m_for">m_if, m_if_else, m_for</a></li>
+</ol>
+</li>
+<li><a href="#router">Router</a><ol>
+<li><a href="#creating-a-router">Creating a Router</a></li>
+<li><a href="#router-push">Router Push</a></li>
+<li><a href="#404-page">404 Page</a></li>
+</ol>
+</li>
+<li><a href="#state-management">State Managements</a><ol>
+<li><a href="#creating-a-global-store">Creating a Global Store</a></li>
+<li><a href="#changing-a-state">Changing a State</a></li>
+<li><a href="#conditional-rendering-based-on-state">Conditional rendering based on State</a></li>
+</ol>
+</li>
+<li><a href="#hosting-mist-app">Hosting Mist App</a><ol>
+<li><a href="#vite">Vite</a></li>
+<li><a href="#express">Express</a></li>
+</ol>
+</li>
+</ol>
+
+<a href="#getting-started" id="getting-started" style="color: inherit; text-decoration: none;">
+  <h1>Getting Started</h1>
+</a>
+<ul>
+<li>
+<a href="#introduction" id="introduction" style="color: inherit; text-decoration: none;">
+  <h2>Introduction</h2>
+</a>
+<ul>
+<li>
+<a href="#what-is-mist" id="what-is-mist" style="color: inherit; text-decoration: none;">
+  <h3>What is Mist?</h3>
+</a>
+
+<a href="#mist-pronounced-mɪst-is-a-javascript-framework-for-building--user-interfaces-it-provides-a-declarative-and-component-based-programming-model-that-helps-you-efficently-develop-simple-user-interfaces" id="mist-pronounced-mɪst-is-a-javascript-framework-for-building--user-interfaces-it-provides-a-declarative-and-component-based-programming-model-that-helps-you-efficently-develop-simple-user-interfaces" style="color: inherit; text-decoration: none;">
+  <h4>Mist (pronounced /mɪst/) is a JavaScript framework for building  user interfaces. It provides a declarative and component-based programming model that helps you efficently develop simple user interfaces.</h4>
+</a>
+<br />
+
+
+<a href="#here-is-a-minimal-example" id="here-is-a-minimal-example" style="color: inherit; text-decoration: none;">
+  <h4>Here is a minimal example:</h4>
+</a>
+<br />
+
+<pre><code class="language-js"><span class="hl-0">//main.js</span><br/><span class="hl-1">import</span><span class="hl-2"> { </span><span class="hl-3">createApp</span><span class="hl-2">, </span><span class="hl-3">createStore</span><span class="hl-2"> } </span><span class="hl-1">from</span><span class="hl-2"> </span><span class="hl-4">&quot;../mist/index&quot;</span><span class="hl-2">;</span><br/><span class="hl-1">import</span><span class="hl-2"> </span><span class="hl-3">router</span><span class="hl-2"> </span><span class="hl-1">from</span><span class="hl-2"> </span><span class="hl-4">&quot;./router/index.js&quot;</span><span class="hl-2">;</span><br/><br/><span class="hl-5">createStore</span><span class="hl-2">({</span><br/><span class="hl-2">    </span><span class="hl-3">count:</span><span class="hl-2"> </span><span class="hl-6">0</span><span class="hl-2">,</span><br/><span class="hl-2">});</span><br/><br/><span class="hl-5">createApp</span><span class="hl-2">(</span><span class="hl-4">&quot;#app&quot;</span><span class="hl-2">, </span><span class="hl-3">router</span><span class="hl-2">);</span>
+</code></pre>
+<br />
+
+<pre><code class="language-html"><span class="hl-0">&lt;!-- index.html --&gt;</span><br/><span class="hl-7">&lt;</span><span class="hl-8">body</span><span class="hl-7">&gt;</span><br/><span class="hl-2">    </span><span class="hl-7">&lt;</span><span class="hl-8">div</span><span class="hl-2"> </span><span class="hl-9">id</span><span class="hl-2">=</span><span class="hl-10">&quot;app&quot;</span><span class="hl-7">&gt;&lt;/</span><span class="hl-8">div</span><span class="hl-7">&gt;</span><br/><span class="hl-2">    </span><span class="hl-7">&lt;</span><span class="hl-8">script</span><span class="hl-11"> </span><span class="hl-9">type</span><span class="hl-11">=</span><span class="hl-10">&quot;module&quot;</span><span class="hl-11"> </span><span class="hl-9">src</span><span class="hl-11">=</span><span class="hl-10">&quot;./src/main.js&quot;</span><span class="hl-7">&gt;&lt;/</span><span class="hl-8">script</span><span class="hl-7">&gt;</span><br/><span class="hl-7">&lt;/</span><span class="hl-8">body</span><span class="hl-7">&gt;</span>
+</code></pre>
+<br />
+
+<pre><code class="language-jsx"><span class="hl-0">// ./views/home.jsx</span><br/><span class="hl-0">/** </span><span class="hl-12">@jsx</span><span class="hl-0"> jsxTransform */</span><br/><span class="hl-1">import</span><span class="hl-2"> { </span><span class="hl-3">jsxTransform</span><span class="hl-2"> } </span><span class="hl-1">from</span><span class="hl-2"> </span><span class="hl-4">&quot;../../mist/index&quot;</span><span class="hl-2">;</span><br/><br/><span class="hl-12">const</span><span class="hl-2"> </span><span class="hl-5">Home</span><span class="hl-2"> = (</span><span class="hl-3">state</span><span class="hl-2">) </span><span class="hl-12">=&gt;</span><span class="hl-2"> {</span><br/><span class="hl-2">    </span><span class="hl-1">return</span><span class="hl-2"> (</span><br/><span class="hl-2">        </span><span class="hl-7">&lt;</span><span class="hl-8">div</span><span class="hl-7">&gt;</span><br/><span class="hl-2">            </span><span class="hl-7">&lt;</span><span class="hl-8">button</span><span class="hl-2">  </span><span class="hl-9">onClick</span><span class="hl-2">=</span><span class="hl-12">{</span><span class="hl-11">() </span><span class="hl-12">=&gt;</span><span class="hl-11"> </span><span class="hl-5">increment</span><span class="hl-11">(</span><span class="hl-3">state</span><span class="hl-11">)</span><span class="hl-12">}</span><span class="hl-7">&gt;</span><br/><span class="hl-2">                Count is </span><span class="hl-12">{</span><span class="hl-3">state</span><span class="hl-11">.</span><span class="hl-3">count</span><span class="hl-12">}</span><br/><span class="hl-2">            </span><span class="hl-7">&lt;/</span><span class="hl-8">button</span><span class="hl-7">&gt;</span><br/><span class="hl-2">        </span><span class="hl-7">&lt;/</span><span class="hl-8">div</span><span class="hl-7">&gt;</span><br/><span class="hl-2">    )</span><br/><span class="hl-2">}</span><br/><br/><span class="hl-1">export</span><span class="hl-2"> </span><span class="hl-1">default</span><span class="hl-2"> </span><span class="hl-3">Home</span><br/><br/><span class="hl-12">const</span><span class="hl-2"> </span><span class="hl-5">increment</span><span class="hl-2"> = (</span><span class="hl-3">state</span><span class="hl-2">) </span><span class="hl-12">=&gt;</span><span class="hl-2"> {</span><br/><span class="hl-2">    </span><span class="hl-3">state</span><span class="hl-2">.</span><span class="hl-3">count</span><span class="hl-2">++</span><br/><span class="hl-2">}</span>
+</code></pre>
+<br />
+
+
+<a href="#the-above-example-demonstrates-the-two-core-features-of-mist" id="the-above-example-demonstrates-the-two-core-features-of-mist" style="color: inherit; text-decoration: none;">
+  <h4>The above example demonstrates the two core features of Mist:</h4>
+</a>
+<ul>
+<li><p><strong>Declarative Rendering</strong>: Mist extends HTML template syntax using JSX that allows us to declaratively describe HTML output based on JavaScript state.</p>
+</li>
+<li><p><strong>Reactivity</strong>: Mist automatically trakcs JavaScript state changes and efficiently updates the DOM when changes happen.</p>
+</li>
+</ul>
+<br />
+
+
+<a href="#you-may-already-have-questions---don39t-worry-we-will-cover-every-little-detail-in-the-rest-of-the-documentation" id="you-may-already-have-questions---don39t-worry-we-will-cover-every-little-detail-in-the-rest-of-the-documentation" style="color: inherit; text-decoration: none;">
+  <h4>You may already have questions - don&#39;t worry. We will cover every little detail in the rest of the documentation.</h4>
+</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#quick-start" id="quick-start" style="color: inherit; text-decoration: none;">
+  <h2>Quick Start</h2>
+</a>
+<ul>
+<li>
+<a href="#creating-a-mist-application" id="creating-a-mist-application" style="color: inherit; text-decoration: none;">
+  <h3>Creating a Mist Application</h3>
+</a>
+
+<a href="#in-this-section-we-will-introduce-how-to-scaffold-a-mist-single-page-application-on-your-local-machine-the-created-project-will-be-using-a-build-setup-based-on-vite" id="in-this-section-we-will-introduce-how-to-scaffold-a-mist-single-page-application-on-your-local-machine-the-created-project-will-be-using-a-build-setup-based-on-vite" style="color: inherit; text-decoration: none;">
+  <h4>In this section we will introduce how to scaffold a Mist Single Page Application on your local machine. The created project will be using a build setup based on <a href="https://vitejs.dev/">Vite</a>.</h4>
+</a>
+<p>  Clone the cli-tool branch:</p>
+<pre><code class="language-bash"><span class="hl-2">git clone -b cli-tool https://01.kood.tech/git/nimi25820/mini-framework.git</span>
+</code></pre>
+<p>  Run the following command in the command line:</p>
+<pre><code class="language-bash"><span class="hl-2">npm run cli [PROJECT-NAME]</span>
+</code></pre>
+<p>  Once the project is created, follow the instructions to install dependencies and start the dev server:</p>
+<pre><code class="language-bash"><span class="hl-5">cd</span><span class="hl-2"> &lt;project-name&gt;</span><br/><br/><span class="hl-2">npm install</span><br/><br/><span class="hl-2">npm run dev</span>
+</code></pre>
+  <br />
+
+<p>  You should now have your first Mist project running.</p>
+</li>
+</ul>
+</li>
+</ul>
+
+<a href="#essentials" id="essentials" style="color: inherit; text-decoration: none;">
+  <h1>Essentials</h1>
+</a>
+<ul>
+<li>
+<a href="#creating-an-application" id="creating-an-application" style="color: inherit; text-decoration: none;">
+  <h2>Creating an Application</h2>
+</a>
+<ul>
+<li>
+<a href="#the-application-instance" id="the-application-instance" style="color: inherit; text-decoration: none;">
+  <h3>The application instance</h3>
+</a>
+
+<a href="#every-mist-application-starts-by-creating-a-new-application-instance-with-the-createapp-function" id="every-mist-application-starts-by-creating-a-new-application-instance-with-the-createapp-function" style="color: inherit; text-decoration: none;">
+  <h4>Every Mist application starts by creating a new application instance with the createApp function:</h4>
+</a>
+  <br />
+
+<pre><code class="language-js"><span class="hl-1">import</span><span class="hl-2"> { </span><span class="hl-3">createApp</span><span class="hl-2">} </span><span class="hl-1">from</span><span class="hl-2"> </span><span class="hl-4">&quot;../mist/index&quot;</span><span class="hl-2">;</span><br/><span class="hl-1">import</span><span class="hl-2"> </span><span class="hl-3">router</span><span class="hl-2"> </span><span class="hl-1">from</span><span class="hl-2"> </span><span class="hl-4">&quot;./router/index.js&quot;</span><span class="hl-2">;</span><br/><br/><span class="hl-5">createApp</span><span class="hl-2">(</span><span class="hl-4">&quot;#app&quot;</span><span class="hl-2">, </span><span class="hl-3">router</span><span class="hl-2">);</span>
+</code></pre>
+  <br />
+  
+
+<a href="#every-application-takes-in-a-mount-point-and-a-router-with-atleast-one-defined-route-we-will-talk-about-router-in-router-paragraph" id="every-application-takes-in-a-mount-point-and-a-router-with-atleast-one-defined-route-we-will-talk-about-router-in-router-paragraph" style="color: inherit; text-decoration: none;">
+  <h4>Every application takes in a mount point and a router with atleast one defined route. We will talk about router in <a href="#router">Router</a> paragraph.</h4>
+</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#template-syntax" id="template-syntax" style="color: inherit; text-decoration: none;">
+  <h2>Template Syntax</h2>
+</a>
+<ul>
+<li>
+<a href="#basic-syntax" id="basic-syntax" style="color: inherit; text-decoration: none;">
+  <h3>Basic syntax</h3>
+</a>
+
+<a href="#every-template-must-be-declared-in-a-jsx-file-because-mist-utilizes-jsx-to-then-transform-the-jsx-element-into-virtual-dom-that-gets-applied-to-real-dom" id="every-template-must-be-declared-in-a-jsx-file-because-mist-utilizes-jsx-to-then-transform-the-jsx-element-into-virtual-dom-that-gets-applied-to-real-dom" style="color: inherit; text-decoration: none;">
+  <h4>Every template must be declared in a JSX file because Mist utilizes JSX to then transform the JSX element into Virtual DOM that gets applied to real DOM:</h4>
+</a>
+  <br />
+
+<pre><code class="language-jsx"><span class="hl-0">// ./views/home.jsx</span><br/><br/><span class="hl-0">/** </span><span class="hl-12">@jsx</span><span class="hl-0"> jsxTransform */</span><br/><span class="hl-1">import</span><span class="hl-2"> { </span><span class="hl-3">jsxTransform</span><span class="hl-2"> } </span><span class="hl-1">from</span><span class="hl-2"> </span><span class="hl-4">&quot;../../../mist/index&quot;</span><span class="hl-2">;</span><br/><br/><span class="hl-12">const</span><span class="hl-2"> </span><span class="hl-5">Home</span><span class="hl-2"> = (</span><span class="hl-3">state</span><span class="hl-2">) </span><span class="hl-12">=&gt;</span><span class="hl-2"> {</span><br/><span class="hl-2">    </span><span class="hl-1">return</span><span class="hl-2"> (</span><br/><span class="hl-2">        </span><span class="hl-7">&lt;</span><span class="hl-8">div</span><span class="hl-7">&gt;</span><br/><span class="hl-2">            This is home</span><br/><span class="hl-2">        </span><span class="hl-7">&lt;/</span><span class="hl-8">div</span><span class="hl-7">&gt;</span><br/><span class="hl-2">    )</span><br/><span class="hl-2">}</span><br/><br/><span class="hl-1">export</span><span class="hl-2"> </span><span class="hl-1">default</span><span class="hl-2"> </span><span class="hl-3">Home</span>
+</code></pre>
+  <br />
+
+<pre><code class="language-jsx"><span class="hl-0">/** </span><span class="hl-12">@jsx</span><span class="hl-0"> jsxTransform */</span><br/><span class="hl-1">import</span><span class="hl-2"> { </span><span class="hl-3">jsxTransform</span><span class="hl-2"> } </span><span class="hl-1">from</span><span class="hl-2"> </span><span class="hl-4">&quot;../../../mist/index&quot;</span><span class="hl-2">;</span>
+</code></pre>
+<p>  The above tells JSX to transform the template using Mists built in transformer.</p>
+<pre><code class="language-jsx"><span class="hl-1">export</span><span class="hl-2"> </span><span class="hl-1">default</span><span class="hl-2"> </span><span class="hl-3">Home</span>
+</code></pre>
+<p>  Every template takes in a state argument, more about that in <a href="#state-management">State Management</a> and has to be exported to be used as a view or as a component.</p>
+</li>
+<li>
+<a href="#binding" id="binding" style="color: inherit; text-decoration: none;">
+  <h3>Binding</h3>
+</a>
+
+<a href="#thanks-to-jsx-you-can-bind-a-function-to-any-html-attribute" id="thanks-to-jsx-you-can-bind-a-function-to-any-html-attribute" style="color: inherit; text-decoration: none;">
+  <h4>Thanks to JSX, you can bind a function to any HTML attribute:</h4>
+</a>
+  <br />
+
+<pre><code class="language-jsx"><span class="hl-0">// ./views/home.jsx</span><br/><span class="hl-12">const</span><span class="hl-2"> </span><span class="hl-5">Home</span><span class="hl-2"> = (</span><span class="hl-3">state</span><span class="hl-2">) </span><span class="hl-12">=&gt;</span><span class="hl-2"> {</span><br/><span class="hl-2">    </span><span class="hl-1">return</span><span class="hl-2"> (</span><br/><span class="hl-2">        </span><span class="hl-7">&lt;</span><span class="hl-8">div</span><span class="hl-2"> </span><span class="hl-9">class</span><span class="hl-2">=</span><span class="hl-12">{</span><span class="hl-5">getHomeClass</span><span class="hl-11">()</span><span class="hl-12">}</span><span class="hl-2"> </span><span class="hl-9">id</span><span class="hl-2">=</span><span class="hl-12">{</span><span class="hl-5">getHomeId</span><span class="hl-11">()</span><span class="hl-12">}</span><span class="hl-7">&gt;</span><br/><span class="hl-2">            This is home</span><br/><span class="hl-2">        </span><span class="hl-7">&lt;/</span><span class="hl-8">div</span><span class="hl-7">&gt;</span><br/><span class="hl-2">    )</span><br/><span class="hl-2">}</span><br/><br/><span class="hl-1">export</span><span class="hl-2"> </span><span class="hl-1">default</span><span class="hl-2"> </span><span class="hl-3">Home</span><br/><br/><span class="hl-12">const</span><span class="hl-2"> </span><span class="hl-5">getHomeClass</span><span class="hl-2"> = () </span><span class="hl-12">=&gt;</span><span class="hl-2"> {</span><br/><span class="hl-2">    </span><span class="hl-1">return</span><span class="hl-2"> </span><span class="hl-4">&quot;home-class&quot;</span><br/><span class="hl-2">}</span><br/><br/><span class="hl-12">const</span><span class="hl-2"> </span><span class="hl-5">getHomeId</span><span class="hl-2"> = () </span><span class="hl-12">=&gt;</span><span class="hl-2"> {</span><br/><span class="hl-2">    </span><span class="hl-1">return</span><span class="hl-2"> </span><span class="hl-4">&quot;home-id&quot;</span><br/><span class="hl-2">}</span>
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<a href="#event-handling" id="event-handling" style="color: inherit; text-decoration: none;">
+  <h2>Event Handling</h2>
+</a>
+<ul>
+<li>
+<a href="#basic-syntax-1" id="basic-syntax-1" style="color: inherit; text-decoration: none;">
+  <h3>Basic syntax</h3>
+</a>
+
+<a href="#mist-utilizes-jsx-to-bind-events-on-to-html-elements-under-the-hood-mist-parses-those-event-names-and-adds-native-js-eventhandler-with-the-function-as-the-parameter" id="mist-utilizes-jsx-to-bind-events-on-to-html-elements-under-the-hood-mist-parses-those-event-names-and-adds-native-js-eventhandler-with-the-function-as-the-parameter" style="color: inherit; text-decoration: none;">
+  <h4>Mist utilizes JSX to bind events on to HTML elements. Under the hood, Mist parses those event names and adds native JS eventHandler with the function as the parameter.</h4>
+</a>
+  <br />
+
+<pre><code class="language-jsx"><span class="hl-0">// ./views/home.jsx</span><br/><span class="hl-12">const</span><span class="hl-2"> </span><span class="hl-5">Home</span><span class="hl-2"> = (</span><span class="hl-3">state</span><span class="hl-2">) </span><span class="hl-12">=&gt;</span><span class="hl-2"> {</span><br/><span class="hl-2">    </span><span class="hl-1">return</span><span class="hl-2"> (</span><br/><span class="hl-2">        </span><span class="hl-7">&lt;</span><span class="hl-8">div</span><span class="hl-7">&gt;</span><br/><span class="hl-2">            </span><span class="hl-7">&lt;</span><span class="hl-8">button</span><span class="hl-2">  </span><span class="hl-9">onClick</span><span class="hl-2">=</span><span class="hl-12">{</span><span class="hl-11">() </span><span class="hl-12">=&gt;</span><span class="hl-11"> </span><span class="hl-5">increment</span><span class="hl-11">(</span><span class="hl-3">state</span><span class="hl-11">)</span><span class="hl-12">}</span><span class="hl-7">&gt;</span><br/><span class="hl-2">                Count is </span><span class="hl-12">{</span><span class="hl-3">state</span><span class="hl-11">.</span><span class="hl-3">count</span><span class="hl-12">}</span><br/><span class="hl-2">            </span><span class="hl-7">&lt;/</span><span class="hl-8">button</span><span class="hl-7">&gt;</span><br/><span class="hl-2">        </span><span class="hl-7">&lt;/</span><span class="hl-8">div</span><span class="hl-7">&gt;</span><br/><span class="hl-2">    )</span><br/><span class="hl-2">}</span><br/><br/><span class="hl-1">export</span><span class="hl-2"> </span><span class="hl-1">default</span><span class="hl-2"> </span><span class="hl-3">Home</span><br/><br/><span class="hl-12">const</span><span class="hl-2"> </span><span class="hl-5">increment</span><span class="hl-2"> = (</span><span class="hl-3">state</span><span class="hl-2">) </span><span class="hl-12">=&gt;</span><span class="hl-2"> {</span><br/><span class="hl-2">    </span><span class="hl-3">state</span><span class="hl-2">.</span><span class="hl-3">count</span><span class="hl-2">++</span><br/><span class="hl-2">}</span>
+</code></pre>
+  <br />
+
+<pre><code class="language-jsx"><span class="hl-0">// ./views/home.jsx</span><br/><span class="hl-12">const</span><span class="hl-2"> </span><span class="hl-5">Home</span><span class="hl-2"> = (</span><span class="hl-3">state</span><span class="hl-2">) </span><span class="hl-12">=&gt;</span><span class="hl-2"> {</span><br/><span class="hl-2">    </span><span class="hl-1">return</span><span class="hl-2"> (</span><br/><span class="hl-2">        </span><span class="hl-7">&lt;</span><span class="hl-8">div</span><span class="hl-7">&gt;</span><br/><span class="hl-2">            </span><span class="hl-7">&lt;</span><span class="hl-8">input</span><span class="hl-2"> </span><span class="hl-9">class</span><span class="hl-2">=</span><span class="hl-4">&quot;alert-input&quot;</span><span class="hl-2"> </span><span class="hl-9">placeholder</span><span class="hl-2">=</span><span class="hl-4">&quot;Alert this field&quot;</span><span class="hl-2">  </span><span class="hl-9">onKeyDown</span><span class="hl-2">=</span><span class="hl-12">{</span><span class="hl-11">(</span><span class="hl-3">e</span><span class="hl-11">) </span><span class="hl-12">=&gt;</span><span class="hl-11"> </span><span class="hl-5">alertInputValue</span><span class="hl-11">(</span><span class="hl-3">e</span><span class="hl-11">)</span><span class="hl-12">}</span><span class="hl-7">&gt;</span><br/><span class="hl-2">                Count is </span><span class="hl-12">{</span><span class="hl-3">state</span><span class="hl-11">.</span><span class="hl-3">count</span><span class="hl-12">}</span><br/><span class="hl-2">            </span><span class="hl-7">&lt;/</span><span class="hl-8">input</span><span class="hl-7">&gt;</span><br/><span class="hl-2">        </span><span class="hl-7">&lt;/</span><span class="hl-8">div</span><span class="hl-7">&gt;</span><br/><span class="hl-2">    )</span><br/><span class="hl-2">}</span><br/><br/><span class="hl-1">export</span><span class="hl-2"> </span><span class="hl-1">default</span><span class="hl-2"> </span><span class="hl-3">Home</span><br/><br/><span class="hl-12">const</span><span class="hl-2"> </span><span class="hl-5">alertInputField</span><span class="hl-2"> = (</span><span class="hl-3">event</span><span class="hl-2">) </span><span class="hl-12">=&gt;</span><span class="hl-2"> {</span><br/><span class="hl-2">    </span><span class="hl-1">if</span><span class="hl-2"> (</span><span class="hl-3">event</span><span class="hl-2">.</span><span class="hl-3">key</span><span class="hl-2"> !== </span><span class="hl-4">&quot;Enter&quot;</span><span class="hl-2">) </span><span class="hl-1">return</span><span class="hl-2">;</span><br/><br/><span class="hl-2">    </span><span class="hl-12">let</span><span class="hl-2"> </span><span class="hl-3">input</span><span class="hl-2"> = </span><span class="hl-3">document</span><span class="hl-2">.</span><span class="hl-5">querySelector</span><span class="hl-2">(</span><span class="hl-4">&quot;.alert-input&quot;</span><span class="hl-2">)</span><br/><br/><span class="hl-2">    </span><span class="hl-5">alert</span><span class="hl-2">(</span><span class="hl-3">input</span><span class="hl-2">.</span><span class="hl-3">value</span><span class="hl-2">)</span><br/><br/><span class="hl-2">    </span><span class="hl-3">input</span><span class="hl-2">.</span><span class="hl-3">value</span><span class="hl-2"> = </span><span class="hl-4">&quot;&quot;</span><br/><span class="hl-2">}</span>
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<a href="#components-basics" id="components-basics" style="color: inherit; text-decoration: none;">
+  <h2>Components Basics</h2>
+</a>
+<ul>
+<li>
+<a href="#defining-a-component" id="defining-a-component" style="color: inherit; text-decoration: none;">
+  <h3>Defining a Component</h3>
+</a>
+
+<a href="#in-mist-everything-can-be-used-as-a-component-you-can-create-seperate-files-for-each-importable-component-or-define-multiple-components-in-the-same-file-to-be-used-in-there" id="in-mist-everything-can-be-used-as-a-component-you-can-create-seperate-files-for-each-importable-component-or-define-multiple-components-in-the-same-file-to-be-used-in-there" style="color: inherit; text-decoration: none;">
+  <h4>In Mist, everything can be used as a component. You can create seperate files for each importable component or define multiple components in the same file to be used in there.</h4>
+</a>
+  <br />
+
+
+<a href="#seperate-importable-components" id="seperate-importable-components" style="color: inherit; text-decoration: none;">
+  <h4>Seperate importable components:</h4>
+</a>
+  <br />
+
+<pre><code class="language-jsx"><span class="hl-0">// ./components/footer.jsx</span><br/><br/><span class="hl-0">/** </span><span class="hl-12">@jsx</span><span class="hl-0"> jsxTransform */</span><br/><span class="hl-1">import</span><span class="hl-2"> { </span><span class="hl-3">jsxTransform</span><span class="hl-2"> } </span><span class="hl-1">from</span><span class="hl-2"> </span><span class="hl-4">&quot;../../../mist/index&quot;</span><span class="hl-2">;</span><br/><br/><span class="hl-12">const</span><span class="hl-2"> </span><span class="hl-5">Footer</span><span class="hl-2"> = (</span><span class="hl-3">state</span><span class="hl-2">) </span><span class="hl-12">=&gt;</span><span class="hl-2"> {</span><br/><span class="hl-2">    </span><span class="hl-1">return</span><span class="hl-2"> (</span><br/><span class="hl-2">        </span><span class="hl-7">&lt;</span><span class="hl-8">div</span><span class="hl-7">&gt;</span><br/><span class="hl-2">            This is Footer component</span><br/><span class="hl-2">        </span><span class="hl-7">&lt;/</span><span class="hl-8">div</span><span class="hl-7">&gt;</span><br/><span class="hl-2">    )</span><br/><span class="hl-2">}</span><br/><br/><span class="hl-1">export</span><span class="hl-2"> </span><span class="hl-1">default</span><span class="hl-2"> </span><span class="hl-3">Footer</span>
+</code></pre>
+  <br />
+
+<pre><code class="language-jsx"><span class="hl-2">  </span><span class="hl-0">// ./views/home.jsx</span><br/><br/><span class="hl-2">  </span><span class="hl-0">/** </span><span class="hl-12">@jsx</span><span class="hl-0"> jsxTransform */</span><br/><span class="hl-2">  </span><span class="hl-1">import</span><span class="hl-2"> { </span><span class="hl-3">jsxTransform</span><span class="hl-2"> } </span><span class="hl-1">from</span><span class="hl-2"> </span><span class="hl-4">&quot;../../../mist/index&quot;</span><span class="hl-2">;</span><br/><span class="hl-2">  </span><span class="hl-1">import</span><span class="hl-2"> </span><span class="hl-3">Footer</span><span class="hl-2"> </span><span class="hl-1">from</span><span class="hl-2"> </span><span class="hl-4">&quot;../components/footer&quot;</span><br/><br/><span class="hl-2">  </span><span class="hl-12">const</span><span class="hl-2"> </span><span class="hl-5">Home</span><span class="hl-2"> = (</span><span class="hl-3">state</span><span class="hl-2">) </span><span class="hl-12">=&gt;</span><span class="hl-2"> {</span><br/><span class="hl-2">   </span><span class="hl-1">return</span><span class="hl-2"> (</span><br/><span class="hl-2">       </span><span class="hl-7">&lt;</span><span class="hl-8">div</span><span class="hl-7">&gt;</span><br/><span class="hl-2">           This is Home component</span><br/><span class="hl-2">           </span><span class="hl-12">{</span><span class="hl-5">Footer</span><span class="hl-11">()</span><span class="hl-12">}</span><br/><span class="hl-2">       </span><span class="hl-7">&lt;/</span><span class="hl-8">div</span><span class="hl-7">&gt;</span><br/><span class="hl-2">   )</span><br/><span class="hl-2">  }</span><br/><br/><span class="hl-2">  </span><span class="hl-1">export</span><span class="hl-2"> </span><span class="hl-1">default</span><span class="hl-2"> </span><span class="hl-3">Home</span>
+</code></pre>
+  <br />
+
+
+<a href="#in-file-components" id="in-file-components" style="color: inherit; text-decoration: none;">
+  <h4>In file components:</h4>
+</a>
+  <br />
+
+<pre><code class="language-jsx"><span class="hl-2">  </span><span class="hl-0">// ./views/home.jsx</span><br/><br/><span class="hl-2">  </span><span class="hl-0">/** </span><span class="hl-12">@jsx</span><span class="hl-0"> jsxTransform */</span><br/><span class="hl-2">  </span><span class="hl-1">import</span><span class="hl-2"> { </span><span class="hl-3">jsxTransform</span><span class="hl-2"> } </span><span class="hl-1">from</span><span class="hl-2"> </span><span class="hl-4">&quot;../../../mist/index&quot;</span><span class="hl-2">;</span><br/><br/><span class="hl-2">  </span><span class="hl-12">const</span><span class="hl-2"> </span><span class="hl-5">Home</span><span class="hl-2"> = (</span><span class="hl-3">state</span><span class="hl-2">) </span><span class="hl-12">=&gt;</span><span class="hl-2"> {</span><br/><span class="hl-2">   </span><span class="hl-1">return</span><span class="hl-2"> (</span><br/><span class="hl-2">       </span><span class="hl-7">&lt;</span><span class="hl-8">div</span><span class="hl-7">&gt;</span><br/><span class="hl-2">           This is Home component</span><br/><span class="hl-2">           </span><span class="hl-12">{</span><span class="hl-5">Footer</span><span class="hl-11">()</span><span class="hl-12">}</span><br/><span class="hl-2">       </span><span class="hl-7">&lt;/</span><span class="hl-8">div</span><span class="hl-7">&gt;</span><br/><span class="hl-2">   )</span><br/><span class="hl-2">  }</span><br/><br/><span class="hl-2">  </span><span class="hl-1">export</span><span class="hl-2"> </span><span class="hl-1">default</span><span class="hl-2"> </span><span class="hl-3">Home</span><br/><br/><span class="hl-2">  </span><span class="hl-12">const</span><span class="hl-2"> </span><span class="hl-5">Footer</span><span class="hl-2"> = (</span><span class="hl-3">state</span><span class="hl-2">) </span><span class="hl-12">=&gt;</span><span class="hl-2"> {</span><br/><span class="hl-2">   </span><span class="hl-1">return</span><span class="hl-2"> (</span><br/><span class="hl-2">       </span><span class="hl-7">&lt;</span><span class="hl-8">div</span><span class="hl-7">&gt;</span><br/><span class="hl-2">           This is Footer component</span><br/><span class="hl-2">       </span><span class="hl-7">&lt;/</span><span class="hl-8">div</span><span class="hl-7">&gt;</span><br/><span class="hl-2">   )</span><br/><span class="hl-2">  }</span>
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<a href="#m_if-m_if_else-m_for" id="m_if-m_if_else-m_for" style="color: inherit; text-decoration: none;">
+  <h2>m_if, m_if_else, m_for</h2>
+</a>
+<ul>
+<li>
+<a href="#m_if" id="m_if" style="color: inherit; text-decoration: none;">
+  <h3>m_if</h3>
+</a>
+
+<a href="#m_if-is-mists-built-in-way-to-do-conditional-rendering-based-on-a-boolean" id="m_if-is-mists-built-in-way-to-do-conditional-rendering-based-on-a-boolean" style="color: inherit; text-decoration: none;">
+  <h4>m_if is Mists built in way to do conditional rendering based on a boolean:</h4>
+</a>
+   <br />
+
+<pre><code class="language-jsx"><span class="hl-0">// ./views/home.jsx</span><br/><br/><span class="hl-0">/** </span><span class="hl-12">@jsx</span><span class="hl-0"> jsxTransform */</span><br/><span class="hl-1">import</span><span class="hl-2"> { </span><span class="hl-3">jsxTransform</span><span class="hl-2">, </span><span class="hl-3">m_if</span><span class="hl-2"> } </span><span class="hl-1">from</span><span class="hl-2"> </span><span class="hl-4">&quot;../../../mist/index&quot;</span><span class="hl-2">;</span><br/><br/><span class="hl-12">const</span><span class="hl-2"> </span><span class="hl-5">Home</span><span class="hl-2"> = (</span><span class="hl-3">state</span><span class="hl-2">) </span><span class="hl-12">=&gt;</span><span class="hl-2"> {</span><br/><span class="hl-2">    </span><span class="hl-1">return</span><span class="hl-2"> (</span><br/><span class="hl-2">        </span><span class="hl-7">&lt;</span><span class="hl-8">div</span><span class="hl-7">&gt;</span><br/><span class="hl-2">            This is home</span><br/><br/><span class="hl-2">            </span><span class="hl-12">{</span><span class="hl-5">m_if</span><span class="hl-11">(</span><span class="hl-6">4</span><span class="hl-11"> </span><span class="hl-2">&gt;</span><span class="hl-11"> </span><span class="hl-6">3</span><span class="hl-11">, (</span><span class="hl-7">&lt;</span><span class="hl-8">div</span><span class="hl-7">&gt;</span><span class="hl-11"> It is true that 4 is bigger than 3</span><span class="hl-7">&lt;/</span><span class="hl-8">div</span><span class="hl-7">&gt;</span><span class="hl-11">))</span><span class="hl-12">}</span><br/><br/><span class="hl-2">        </span><span class="hl-7">&lt;/</span><span class="hl-8">div</span><span class="hl-7">&gt;</span><br/><span class="hl-2">    )</span><br/><span class="hl-2">}</span><br/><br/><span class="hl-1">export</span><span class="hl-2"> </span><span class="hl-1">default</span><span class="hl-2"> </span><span class="hl-3">Home</span>
+</code></pre>
+</li>
+<li>
+<a href="#m_if_else" id="m_if_else" style="color: inherit; text-decoration: none;">
+  <h3>m_if_else</h3>
+</a>
+
+<a href="#m_if_else-is-the-same-as-m_if-but-with-added-else-fallback-element" id="m_if_else-is-the-same-as-m_if-but-with-added-else-fallback-element" style="color: inherit; text-decoration: none;">
+  <h4>m_if_else is the same as <a href="#m_if">m_if</a> but with added else fallback element:</h4>
+</a>
+   <br />
+
+<pre><code class="language-jsx"><span class="hl-0">// ./views/home.jsx</span><br/><br/><span class="hl-0">/** </span><span class="hl-12">@jsx</span><span class="hl-0"> jsxTransform */</span><br/><span class="hl-1">import</span><span class="hl-2"> { </span><span class="hl-3">jsxTransform</span><span class="hl-2">, </span><span class="hl-3">m_if_else</span><span class="hl-2"> } </span><span class="hl-1">from</span><span class="hl-2"> </span><span class="hl-4">&quot;../../../mist/index&quot;</span><span class="hl-2">;</span><br/><br/><span class="hl-12">let</span><span class="hl-2"> </span><span class="hl-3">count</span><span class="hl-2"> = </span><span class="hl-6">9</span><br/><br/><span class="hl-12">const</span><span class="hl-2"> </span><span class="hl-5">Home</span><span class="hl-2"> = (</span><span class="hl-3">state</span><span class="hl-2">) </span><span class="hl-12">=&gt;</span><span class="hl-2"> {</span><br/><span class="hl-2">    </span><span class="hl-1">return</span><span class="hl-2"> (</span><br/><span class="hl-2">        </span><span class="hl-7">&lt;</span><span class="hl-8">div</span><span class="hl-7">&gt;</span><br/><span class="hl-2">            This is home</span><br/><br/><span class="hl-2">            </span><span class="hl-12">{</span><span class="hl-5">m_if_else</span><span class="hl-11">(</span><span class="hl-3">count</span><span class="hl-11"> </span><span class="hl-2">%</span><span class="hl-11"> </span><span class="hl-6">2</span><span class="hl-11"> </span><span class="hl-2">===</span><span class="hl-11"> </span><span class="hl-6">0</span><span class="hl-11">, (</span><span class="hl-7">&lt;</span><span class="hl-8">span</span><span class="hl-7">&gt;</span><span class="hl-11">Count is even</span><span class="hl-7">&lt;/</span><span class="hl-8">span</span><span class="hl-7">&gt;</span><span class="hl-11">), (</span><span class="hl-7">&lt;</span><span class="hl-8">span</span><span class="hl-7">&gt;</span><span class="hl-11">Count is odd</span><span class="hl-7">&lt;/</span><span class="hl-8">span</span><span class="hl-7">&gt;</span><span class="hl-11">))</span><span class="hl-12">}</span><br/><br/><span class="hl-2">        </span><span class="hl-7">&lt;/</span><span class="hl-8">div</span><span class="hl-7">&gt;</span><br/><span class="hl-2">    )</span><br/><span class="hl-2">}</span><br/><br/><span class="hl-1">export</span><span class="hl-2"> </span><span class="hl-1">default</span><span class="hl-2"> </span><span class="hl-3">Home</span>
+</code></pre>
+</li>
+<li>
+<a href="#m_for" id="m_for" style="color: inherit; text-decoration: none;">
+  <h3>m_for</h3>
+</a>
+
+<a href="#m_for-is-mists-built-in-way-to-iterate-over-data-list-and-create-elements-using-a-single-data-from-the-list-in-each-element" id="m_for-is-mists-built-in-way-to-iterate-over-data-list-and-create-elements-using-a-single-data-from-the-list-in-each-element" style="color: inherit; text-decoration: none;">
+  <h4>m_for is Mists built in way to iterate over data list and create elements using a single data from the list in each element:</h4>
+</a>
+   <br />
+
+<pre><code class="language-jsx"><span class="hl-0">// ./views/home.jsx</span><br/><br/><span class="hl-0">/** </span><span class="hl-12">@jsx</span><span class="hl-0"> jsxTransform */</span><br/><span class="hl-1">import</span><span class="hl-2"> { </span><span class="hl-3">jsxTransform</span><span class="hl-2">, </span><span class="hl-3">m_for</span><span class="hl-2"> } </span><span class="hl-1">from</span><span class="hl-2"> </span><span class="hl-4">&quot;../../../mist/index&quot;</span><span class="hl-2">;</span><br/><br/><span class="hl-12">const</span><span class="hl-2"> </span><span class="hl-13">numbers</span><span class="hl-2"> = [</span><span class="hl-6">1</span><span class="hl-2">, </span><span class="hl-6">2</span><span class="hl-2">, </span><span class="hl-6">3</span><span class="hl-2">, </span><span class="hl-6">4</span><span class="hl-2">, </span><span class="hl-6">5</span><span class="hl-2">];</span><br/><br/><span class="hl-12">const</span><span class="hl-2"> </span><span class="hl-5">Home</span><span class="hl-2"> = (</span><span class="hl-3">state</span><span class="hl-2">) </span><span class="hl-12">=&gt;</span><span class="hl-2"> {</span><br/><span class="hl-2">    </span><span class="hl-1">return</span><span class="hl-2"> (</span><br/><span class="hl-2">        </span><span class="hl-7">&lt;</span><span class="hl-8">div</span><span class="hl-7">&gt;</span><br/><span class="hl-2">            This is home</span><br/><br/><span class="hl-2">            </span><span class="hl-12">{</span><span class="hl-11"> </span><span class="hl-5">m_for</span><span class="hl-11">(</span><span class="hl-3">numbers</span><span class="hl-11">, (</span><span class="hl-3">num</span><span class="hl-11">) </span><span class="hl-12">=&gt;</span><span class="hl-11"> { </span><span class="hl-1">return</span><span class="hl-11"> (</span><span class="hl-7">&lt;</span><span class="hl-8">div</span><span class="hl-7">&gt;</span><span class="hl-12">{</span><span class="hl-3">num</span><span class="hl-12">}</span><span class="hl-7">&lt;/</span><span class="hl-8">div</span><span class="hl-7">&gt;</span><span class="hl-11">) }) </span><span class="hl-12">}</span><br/><br/><span class="hl-2">        </span><span class="hl-7">&lt;/</span><span class="hl-8">div</span><span class="hl-7">&gt;</span><br/><span class="hl-2">    )</span><br/><span class="hl-2">}</span><br/><br/><span class="hl-1">export</span><span class="hl-2"> </span><span class="hl-1">default</span><span class="hl-2"> </span><span class="hl-3">Home</span>
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+
+<a href="#router" id="router" style="color: inherit; text-decoration: none;">
+  <h1>Router</h1>
+</a>
+<ul>
+<li>
+<a href="#creating-a-router" id="creating-a-router" style="color: inherit; text-decoration: none;">
+  <h2>Creating a Router</h2>
+</a>
+
+<a href="#mist-is-well-suited-for-building-spas-mists-router-utilizes-browsers-history-api-to-keep-track-of-the-url-and-render-templates-defined-on-each-route-every-mist-application-requires-a-router-with-atleast-one-route-defined-to-create-a-router" id="mist-is-well-suited-for-building-spas-mists-router-utilizes-browsers-history-api-to-keep-track-of-the-url-and-render-templates-defined-on-each-route-every-mist-application-requires-a-router-with-atleast-one-route-defined-to-create-a-router" style="color: inherit; text-decoration: none;">
+  <h4>Mist is well-suited for building SPAs. Mists router utilizes browsers <a href="https://developer.mozilla.org/en-US/docs/Web/API/History">History API</a> to keep track of the URL and render templates defined on each route. Every Mist application requires a router with atleast one route defined. To create a router:</h4>
+</a>
+ <br />
+
+<pre><code class="language-js"><span class="hl-0">// ./router/index.js</span><br/><span class="hl-1">import</span><span class="hl-2"> { </span><span class="hl-3">createRouter</span><span class="hl-2"> } </span><span class="hl-1">from</span><span class="hl-2"> </span><span class="hl-4">&quot;../../../mist/index&quot;</span><span class="hl-2">;</span><br/><span class="hl-1">import</span><span class="hl-2"> </span><span class="hl-3">Home</span><span class="hl-2"> </span><span class="hl-1">from</span><span class="hl-2"> </span><span class="hl-4">&quot;../views/home&quot;</span><span class="hl-2">;</span><br/><span class="hl-1">import</span><span class="hl-2"> </span><span class="hl-3">Profile</span><span class="hl-2"> </span><span class="hl-1">from</span><span class="hl-2"> </span><span class="hl-4">&quot;../views/profile&quot;</span><span class="hl-2">;</span><br/><br/><span class="hl-12">const</span><span class="hl-2"> </span><span class="hl-13">router</span><span class="hl-2"> = </span><span class="hl-5">createRouter</span><span class="hl-2">([</span><br/><span class="hl-2">    {</span><br/><span class="hl-2">        </span><span class="hl-3">path:</span><span class="hl-2"> </span><span class="hl-4">&quot;/&quot;</span><span class="hl-2">,</span><br/><span class="hl-2">        </span><span class="hl-3">name:</span><span class="hl-2"> </span><span class="hl-4">&quot;home&quot;</span><span class="hl-2">,</span><br/><span class="hl-2">        </span><span class="hl-3">title:</span><span class="hl-2"> </span><span class="hl-4">&quot;Home&quot;</span><span class="hl-2">,</span><br/><span class="hl-2">        </span><span class="hl-3">view:</span><span class="hl-2"> </span><span class="hl-3">Home</span><br/><span class="hl-2">    },</span><br/><span class="hl-2">    {</span><br/><span class="hl-2">        </span><span class="hl-3">path:</span><span class="hl-2"> </span><span class="hl-4">&quot;/profile&quot;</span><span class="hl-2">,</span><br/><span class="hl-2">        </span><span class="hl-3">name:</span><span class="hl-2"> </span><span class="hl-4">&quot;profile&quot;</span><span class="hl-2">,</span><br/><span class="hl-2">        </span><span class="hl-3">view:</span><span class="hl-2"> </span><span class="hl-3">Profile</span><br/><span class="hl-2">    },</span><br/><span class="hl-2">]);</span><br/><br/><span class="hl-1">export</span><span class="hl-2"> </span><span class="hl-1">default</span><span class="hl-2"> </span><span class="hl-3">router</span><span class="hl-2">;</span>
+</code></pre>
+ <br />
+
+
+<a href="#each-route-consists-of" id="each-route-consists-of" style="color: inherit; text-decoration: none;">
+  <h4>Each route consists of:</h4>
+</a>
+<ol>
+<li>path - The path at which the template will be rendered on</li>
+<li>name - The name the route has which can be used in <a href="#router-push">router push</a></li>
+<li>title - The optional title which will change the web pages title when on the route</li>
+<li>view - The template you wish to render on that specific route</li>
+</ol>
+</li>
+<li>
+<a href="#router-push" id="router-push" style="color: inherit; text-decoration: none;">
+  <h2>Router Push</h2>
+</a>
+
+<a href="#mists-router-has-a-built-in-method-routerpush-to-push-another-state-into-the-history-api-which-then-triggers-the-template-to-be-rerendered-with-the-corresponding-template-on-that-new-route" id="mists-router-has-a-built-in-method-routerpush-to-push-another-state-into-the-history-api-which-then-triggers-the-template-to-be-rerendered-with-the-corresponding-template-on-that-new-route" style="color: inherit; text-decoration: none;">
+  <h4>Mists router has a built in method router.push to push another state into the History API which then triggers the template to be rerendered with the corresponding template on that new route.</h4>
+</a>
+ <br />
+
+<pre><code class="language-jsx"><span class="hl-2"> </span><span class="hl-0">// ./views/home.jsx</span><br/><br/><span class="hl-2"> </span><span class="hl-0">/** </span><span class="hl-12">@jsx</span><span class="hl-0"> jsxTransform */</span><br/><span class="hl-2"> </span><span class="hl-1">import</span><span class="hl-2"> { </span><span class="hl-3">jsxTransform</span><span class="hl-2">, </span><span class="hl-3">router</span><span class="hl-2">} </span><span class="hl-1">from</span><span class="hl-2"> </span><span class="hl-4">&quot;../../../mist/index&quot;</span><span class="hl-2">;</span><br/><br/><span class="hl-2"> </span><span class="hl-12">const</span><span class="hl-2"> </span><span class="hl-5">Home</span><span class="hl-2"> = (</span><span class="hl-3">state</span><span class="hl-2">) </span><span class="hl-12">=&gt;</span><span class="hl-2"> {</span><br/><span class="hl-2">   </span><span class="hl-1">return</span><span class="hl-2"> (</span><br/><span class="hl-2">       </span><span class="hl-7">&lt;</span><span class="hl-8">div</span><span class="hl-7">&gt;</span><br/><span class="hl-2">           This is Home component</span><br/><span class="hl-2">           </span><span class="hl-7">&lt;</span><span class="hl-8">button</span><span class="hl-2"> </span><span class="hl-9">onClick</span><span class="hl-2">=</span><span class="hl-12">{</span><span class="hl-11">() </span><span class="hl-12">=&gt;</span><span class="hl-11"> </span><span class="hl-3">router</span><span class="hl-11">.</span><span class="hl-5">push</span><span class="hl-11">({ </span><span class="hl-3">type:</span><span class="hl-11"> </span><span class="hl-4">&quot;path&quot;</span><span class="hl-11">, </span><span class="hl-3">value:</span><span class="hl-11"> </span><span class="hl-4">&quot;/profile&quot;</span><span class="hl-11"> })</span><span class="hl-12">}</span><span class="hl-7">&gt;</span><span class="hl-2">To Profile</span><span class="hl-7">&lt;/</span><span class="hl-8">button</span><span class="hl-7">&gt;</span><br/><span class="hl-2">       </span><span class="hl-7">&lt;/</span><span class="hl-8">div</span><span class="hl-7">&gt;</span><br/><span class="hl-2">   )</span><br/><span class="hl-2"> }</span><br/><br/><span class="hl-2"> </span><span class="hl-1">export</span><span class="hl-2"> </span><span class="hl-1">default</span><span class="hl-2"> </span><span class="hl-3">Home</span>
+</code></pre>
+  <br />
+
+<pre><code class="language-jsx"><span class="hl-2"> </span><span class="hl-0">// ./views/profile.jsx</span><br/><br/><span class="hl-2"> </span><span class="hl-0">/** </span><span class="hl-12">@jsx</span><span class="hl-0"> jsxTransform */</span><br/><span class="hl-2"> </span><span class="hl-1">import</span><span class="hl-2"> { </span><span class="hl-3">jsxTransform</span><span class="hl-2">, </span><span class="hl-3">router</span><span class="hl-2">} </span><span class="hl-1">from</span><span class="hl-2"> </span><span class="hl-4">&quot;../../mist/index&quot;</span><span class="hl-2">;</span><br/><br/><span class="hl-2"> </span><span class="hl-12">const</span><span class="hl-2"> </span><span class="hl-5">Profile</span><span class="hl-2"> = (</span><span class="hl-3">state</span><span class="hl-2">) </span><span class="hl-12">=&gt;</span><span class="hl-2"> {</span><br/><span class="hl-2">   </span><span class="hl-1">return</span><span class="hl-2"> (</span><br/><span class="hl-2">       </span><span class="hl-7">&lt;</span><span class="hl-8">div</span><span class="hl-7">&gt;</span><br/><span class="hl-2">           This is Profile component</span><br/><span class="hl-2">            </span><span class="hl-7">&lt;</span><span class="hl-8">button</span><span class="hl-2"> </span><span class="hl-9">onClick</span><span class="hl-2">=</span><span class="hl-12">{</span><span class="hl-11">() </span><span class="hl-12">=&gt;</span><span class="hl-11"> </span><span class="hl-3">router</span><span class="hl-11">.</span><span class="hl-5">push</span><span class="hl-11">({ </span><span class="hl-3">type:</span><span class="hl-11"> </span><span class="hl-4">&quot;name&quot;</span><span class="hl-11">, </span><span class="hl-3">value:</span><span class="hl-11"> </span><span class="hl-4">&quot;home&quot;</span><span class="hl-11"> })</span><span class="hl-12">}</span><span class="hl-7">&gt;</span><span class="hl-2">Take me back home</span><span class="hl-7">&lt;/</span><span class="hl-8">button</span><span class="hl-7">&gt;</span><br/><span class="hl-2">       </span><span class="hl-7">&lt;/</span><span class="hl-8">div</span><span class="hl-7">&gt;</span><br/><span class="hl-2">   )</span><br/><span class="hl-2"> }</span><br/><br/><span class="hl-2"> </span><span class="hl-1">export</span><span class="hl-2"> </span><span class="hl-1">default</span><span class="hl-2"> </span><span class="hl-3">Profile</span>
+</code></pre>
+</li>
+<li>
+<a href="#404-page" id="404-page" style="color: inherit; text-decoration: none;">
+  <h2>404 Page</h2>
+</a>
+
+<a href="#mists-router-also-allows-you-to-define-a-404-route-which-will-be-rendered-when-the-user-goes-to-a-route-that-doesn39t-exist-within-your-application-this-allows-you-to-costumize-your-404-page-easily" id="mists-router-also-allows-you-to-define-a-404-route-which-will-be-rendered-when-the-user-goes-to-a-route-that-doesn39t-exist-within-your-application-this-allows-you-to-costumize-your-404-page-easily" style="color: inherit; text-decoration: none;">
+  <h4>Mists router also allows you to define a 404 route which will be rendered when the user goes to a route that doesn&#39;t exist within your application. This allows you to costumize your 404 page easily.</h4>
+</a>
+ <br />
+
+<pre><code class="language-js"><span class="hl-0">// ./router/index.js</span><br/><span class="hl-1">import</span><span class="hl-2"> { </span><span class="hl-3">createRouter</span><span class="hl-2"> } </span><span class="hl-1">from</span><span class="hl-2"> </span><span class="hl-4">&quot;../../mist/index&quot;</span><span class="hl-2">;</span><br/><span class="hl-1">import</span><span class="hl-2"> </span><span class="hl-3">Home</span><span class="hl-2"> </span><span class="hl-1">from</span><span class="hl-2"> </span><span class="hl-4">&quot;../views/home&quot;</span><span class="hl-2">;</span><br/><span class="hl-1">import</span><span class="hl-2"> </span><span class="hl-3">_404</span><span class="hl-2"> </span><span class="hl-1">from</span><span class="hl-2"> </span><span class="hl-4">&quot;../views/404&quot;</span><span class="hl-2">;</span><br/><br/><span class="hl-12">const</span><span class="hl-2"> </span><span class="hl-13">router</span><span class="hl-2"> = </span><span class="hl-5">createRouter</span><span class="hl-2">([</span><br/><span class="hl-2">    {</span><br/><span class="hl-2">        </span><span class="hl-3">path:</span><span class="hl-2"> </span><span class="hl-4">&quot;/&quot;</span><span class="hl-2">,</span><br/><span class="hl-2">        </span><span class="hl-3">name:</span><span class="hl-2"> </span><span class="hl-4">&quot;home&quot;</span><span class="hl-2">,</span><br/><span class="hl-2">        </span><span class="hl-3">title:</span><span class="hl-2"> </span><span class="hl-4">&quot;Home&quot;</span><span class="hl-2">,</span><br/><span class="hl-2">        </span><span class="hl-3">view:</span><span class="hl-2"> </span><span class="hl-3">Home</span><br/><span class="hl-2">    },</span><br/><span class="hl-2">    {</span><br/><span class="hl-2">        </span><span class="hl-3">path:</span><span class="hl-2"> </span><span class="hl-4">&quot;/PageNotFound&quot;</span><span class="hl-2">,</span><br/><span class="hl-2">        </span><span class="hl-3">name:</span><span class="hl-2"> </span><span class="hl-4">&quot;404&quot;</span><span class="hl-2">,</span><br/><span class="hl-2">        </span><span class="hl-3">view:</span><span class="hl-2"> </span><span class="hl-3">_404</span><br/><span class="hl-2">    },</span><br/><span class="hl-2">]);</span><br/><br/><span class="hl-1">export</span><span class="hl-2"> </span><span class="hl-1">default</span><span class="hl-2"> </span><span class="hl-3">router</span><span class="hl-2">;</span>
+</code></pre>
+</li>
+</ul>
+
+<a href="#state-management" id="state-management" style="color: inherit; text-decoration: none;">
+  <h1>State Management</h1>
+</a>
+<ul>
+<li>
+<a href="#creating-a-global-store" id="creating-a-global-store" style="color: inherit; text-decoration: none;">
+  <h2>Creating a Global Store</h2>
+</a>
+
+<a href="#mist-can-keep-track-of-all-your-global-states-by-first-creating-a-global-store-where-to-then-define-your-states" id="mist-can-keep-track-of-all-your-global-states-by-first-creating-a-global-store-where-to-then-define-your-states" style="color: inherit; text-decoration: none;">
+  <h4>Mist can keep track of all your global states by first creating a global store where to then define your states:</h4>
+</a>
+ <br />
+
+<pre><code class="language-js"><span class="hl-0">//main.js</span><br/><span class="hl-1">import</span><span class="hl-2"> { </span><span class="hl-3">createApp</span><span class="hl-2">, </span><span class="hl-3">createStore</span><span class="hl-2"> } </span><span class="hl-1">from</span><span class="hl-2"> </span><span class="hl-4">&quot;../mist/index&quot;</span><span class="hl-2">;</span><br/><span class="hl-1">import</span><span class="hl-2"> </span><span class="hl-3">router</span><span class="hl-2"> </span><span class="hl-1">from</span><span class="hl-2"> </span><span class="hl-4">&quot;./router/index.js&quot;</span><span class="hl-2">;</span><br/><br/><span class="hl-5">createStore</span><span class="hl-2">({</span><br/><span class="hl-2">    </span><span class="hl-3">count:</span><span class="hl-2"> </span><span class="hl-6">0</span><br/><span class="hl-2">});</span><br/><br/><span class="hl-5">createApp</span><span class="hl-2">(</span><span class="hl-4">&quot;#app&quot;</span><span class="hl-2">, </span><span class="hl-3">router</span><span class="hl-2">);</span>
+</code></pre>
+</li>
+<li>
+<a href="#changing-a-state" id="changing-a-state" style="color: inherit; text-decoration: none;">
+  <h2>Changing a State</h2>
+</a>
+
+<a href="#to-change-a-state-you-simply-have-to-pass-the-state-argument-into-a-function-that-then-changes-the-selected-and-available-state" id="to-change-a-state-you-simply-have-to-pass-the-state-argument-into-a-function-that-then-changes-the-selected-and-available-state" style="color: inherit; text-decoration: none;">
+  <h4>To change a state, you simply have to pass the state argument into a function that then changes the selected and available state.</h4>
+</a>
+ <br />
+
+<pre><code class="language-jsx"><span class="hl-0">// ./views/home.jsx</span><br/><span class="hl-0">/** </span><span class="hl-12">@jsx</span><span class="hl-0"> jsxTransform */</span><br/><span class="hl-1">import</span><span class="hl-2"> { </span><span class="hl-3">jsxTransform</span><span class="hl-2"> } </span><span class="hl-1">from</span><span class="hl-2"> </span><span class="hl-4">&quot;../../mist/index&quot;</span><span class="hl-2">;</span><br/><br/><span class="hl-12">const</span><span class="hl-2"> </span><span class="hl-5">Home</span><span class="hl-2"> = (</span><span class="hl-3">state</span><span class="hl-2">) </span><span class="hl-12">=&gt;</span><span class="hl-2"> {</span><br/><span class="hl-2">    </span><span class="hl-1">return</span><span class="hl-2"> (</span><br/><span class="hl-2">        </span><span class="hl-7">&lt;</span><span class="hl-8">div</span><span class="hl-7">&gt;</span><br/><span class="hl-2">            </span><span class="hl-7">&lt;</span><span class="hl-8">button</span><span class="hl-2">  </span><span class="hl-9">onClick</span><span class="hl-2">=</span><span class="hl-12">{</span><span class="hl-11">() </span><span class="hl-12">=&gt;</span><span class="hl-11"> </span><span class="hl-5">increment</span><span class="hl-11">(</span><span class="hl-3">state</span><span class="hl-11">)</span><span class="hl-12">}</span><span class="hl-7">&gt;</span><br/><span class="hl-2">                Count is </span><span class="hl-12">{</span><span class="hl-3">state</span><span class="hl-11">.</span><span class="hl-3">count</span><span class="hl-12">}</span><br/><span class="hl-2">            </span><span class="hl-7">&lt;/</span><span class="hl-8">button</span><span class="hl-7">&gt;</span><br/><span class="hl-2">        </span><span class="hl-7">&lt;/</span><span class="hl-8">div</span><span class="hl-7">&gt;</span><br/><span class="hl-2">    )</span><br/><span class="hl-2">}</span><br/><br/><span class="hl-1">export</span><span class="hl-2"> </span><span class="hl-1">default</span><span class="hl-2"> </span><span class="hl-3">Home</span><br/><br/><span class="hl-12">const</span><span class="hl-2"> </span><span class="hl-5">increment</span><span class="hl-2"> = (</span><span class="hl-3">state</span><span class="hl-2">) </span><span class="hl-12">=&gt;</span><span class="hl-2"> {</span><br/><span class="hl-2">    </span><span class="hl-3">state</span><span class="hl-2">.</span><span class="hl-3">count</span><span class="hl-2">++</span><br/><span class="hl-2">}</span>
+</code></pre>
+ <br />
+</li>
+<li>
+<a href="#conditional-rendering-based-on-state" id="conditional-rendering-based-on-state" style="color: inherit; text-decoration: none;">
+  <h2>Conditional rendering based on State</h2>
+</a>
+
+<a href="#we-already-talked-about-our-built-in-m_if-and-m_if_else-methods-lets-have-a-look-how-to-use-them-with-states" id="we-already-talked-about-our-built-in-m_if-and-m_if_else-methods-lets-have-a-look-how-to-use-them-with-states" style="color: inherit; text-decoration: none;">
+  <h4>We already talked about our built in m_if and m_if_else methods. Lets have a look how to use them with states:</h4>
+</a>
+ <br />
+
+<pre><code class="language-jsx"><span class="hl-0">// ./views/home.jsx</span><br/><br/><span class="hl-0">/** </span><span class="hl-12">@jsx</span><span class="hl-0"> jsxTransform */</span><br/><span class="hl-1">import</span><span class="hl-2"> { </span><span class="hl-3">jsxTransform</span><span class="hl-2">, </span><span class="hl-3">m_if</span><span class="hl-2"> } </span><span class="hl-1">from</span><span class="hl-2"> </span><span class="hl-4">&quot;../../../mist/index&quot;</span><span class="hl-2">;</span><br/><br/><span class="hl-12">const</span><span class="hl-2"> </span><span class="hl-5">Home</span><span class="hl-2"> = (</span><span class="hl-3">state</span><span class="hl-2">) </span><span class="hl-12">=&gt;</span><span class="hl-2"> {</span><br/><span class="hl-2">    </span><span class="hl-1">return</span><span class="hl-2"> (</span><br/><span class="hl-2">        </span><span class="hl-7">&lt;</span><span class="hl-8">div</span><span class="hl-7">&gt;</span><br/><span class="hl-2">            This is home</span><br/><br/><span class="hl-2">            </span><span class="hl-12">{</span><span class="hl-5">m_if</span><span class="hl-11">(</span><span class="hl-3">state</span><span class="hl-11">.</span><span class="hl-3">count</span><span class="hl-11"> </span><span class="hl-2">&gt;</span><span class="hl-11"> </span><span class="hl-6">3</span><span class="hl-11">, (</span><span class="hl-7">&lt;</span><span class="hl-8">div</span><span class="hl-7">&gt;</span><span class="hl-11"> It is true that </span><span class="hl-12">{</span><span class="hl-3">state</span><span class="hl-11">.</span><span class="hl-3">count</span><span class="hl-12">}</span><span class="hl-11"> is bigger than 3</span><span class="hl-7">&lt;/</span><span class="hl-8">div</span><span class="hl-7">&gt;</span><span class="hl-11">))</span><span class="hl-12">}</span><br/><br/><span class="hl-2">        </span><span class="hl-7">&lt;/</span><span class="hl-8">div</span><span class="hl-7">&gt;</span><br/><span class="hl-2">    )</span><br/><span class="hl-2">}</span><br/><br/><span class="hl-1">export</span><span class="hl-2"> </span><span class="hl-1">default</span><span class="hl-2"> </span><span class="hl-3">Home</span>
+</code></pre>
+  <br />
+
+<pre><code class="language-jsx"><span class="hl-0">// ./views/home.jsx</span><br/><br/><span class="hl-0">/** </span><span class="hl-12">@jsx</span><span class="hl-0"> jsxTransform */</span><br/><span class="hl-1">import</span><span class="hl-2"> { </span><span class="hl-3">jsxTransform</span><span class="hl-2">, </span><span class="hl-3">m_if_else</span><span class="hl-2"> } </span><span class="hl-1">from</span><span class="hl-2"> </span><span class="hl-4">&quot;../../../mist/index&quot;</span><span class="hl-2">;</span><br/><br/><span class="hl-12">const</span><span class="hl-2"> </span><span class="hl-5">Home</span><span class="hl-2"> = (</span><span class="hl-3">state</span><span class="hl-2">) </span><span class="hl-12">=&gt;</span><span class="hl-2"> {</span><br/><span class="hl-2">    </span><span class="hl-1">return</span><span class="hl-2"> (</span><br/><span class="hl-2">        </span><span class="hl-7">&lt;</span><span class="hl-8">div</span><span class="hl-7">&gt;</span><br/><span class="hl-2">            This is Home component</span><br/><br/><span class="hl-2">            </span><span class="hl-12">{</span><span class="hl-5">m_if_else</span><span class="hl-11">(</span><span class="hl-3">state</span><span class="hl-11">.</span><span class="hl-3">count</span><span class="hl-11"> </span><span class="hl-2">%</span><span class="hl-11"> </span><span class="hl-6">2</span><span class="hl-11"> </span><span class="hl-2">===</span><span class="hl-11"> </span><span class="hl-6">0</span><span class="hl-11">, (</span><span class="hl-7">&lt;</span><span class="hl-8">span</span><span class="hl-7">&gt;</span><span class="hl-11">Count is even</span><span class="hl-7">&lt;/</span><span class="hl-8">span</span><span class="hl-7">&gt;</span><span class="hl-11">), (</span><span class="hl-7">&lt;</span><span class="hl-8">span</span><span class="hl-7">&gt;</span><span class="hl-11">Count is odd</span><span class="hl-7">&lt;/</span><span class="hl-8">span</span><span class="hl-7">&gt;</span><span class="hl-11">))</span><span class="hl-12">}</span><br/><br/><span class="hl-2">        </span><span class="hl-7">&lt;/</span><span class="hl-8">div</span><span class="hl-7">&gt;</span><br/><span class="hl-2">    )</span><br/><span class="hl-2">}</span><br/><br/><span class="hl-1">export</span><span class="hl-2"> </span><span class="hl-1">default</span><span class="hl-2"> </span><span class="hl-3">Home</span>
+</code></pre>
+</li>
+</ul>
+
+<a href="#hosting-mist-app" id="hosting-mist-app" style="color: inherit; text-decoration: none;">
+  <h1>Hosting Mist App</h1>
+</a>
+<ul>
+<li>
+<a href="#vite" id="vite" style="color: inherit; text-decoration: none;">
+  <h2>Vite</h2>
+</a>
+
+<a href="#we-already-talked-about-how-to-scaffold-our-project-using-vite-well-you-can-keep-on-using-vite-to-host-yourself-a-hot-reloaded-dev-server" id="we-already-talked-about-how-to-scaffold-our-project-using-vite-well-you-can-keep-on-using-vite-to-host-yourself-a-hot-reloaded-dev-server" style="color: inherit; text-decoration: none;">
+  <h4>We already talked about how to scaffold our project using Vite. Well you can keep on using Vite to host yourself a hot reloaded dev server.</h4>
+</a>
+</li>
+<li>
+<a href="#express" id="express" style="color: inherit; text-decoration: none;">
+  <h2>Express</h2>
+</a>
+
+<a href="#if-you-need-an-actual-server-to-host-then-vites-dev-server-might-not-be-enough-that-why-we-recommend-using-express-hosting-a-mist-app-is-not-done-the-usual-way-thats-due-to-mists-router-being-a-spa-router-we-need-to-tell-the-web-server-to-always-point-back-to-indexhtml-otherwise-the-browser-will-hit-a-404-page-to-host-your-files-on-the-server-you-have-to-compile-them-using-vite-npm-run-build-that-will-create-a-dist-dir" id="if-you-need-an-actual-server-to-host-then-vites-dev-server-might-not-be-enough-that-why-we-recommend-using-express-hosting-a-mist-app-is-not-done-the-usual-way-thats-due-to-mists-router-being-a-spa-router-we-need-to-tell-the-web-server-to-always-point-back-to-indexhtml-otherwise-the-browser-will-hit-a-404-page-to-host-your-files-on-the-server-you-have-to-compile-them-using-vite-npm-run-build-that-will-create-a-dist-dir" style="color: inherit; text-decoration: none;">
+  <h4>If you need an actual server to host then Vites dev server might not be enough. That why we recommend using Express. Hosting a Mist app is not done the usual way. Thats due to Mists router being a SPA router. We need to tell the web server to always point back to index.html otherwise the browser will hit a 404 page. To host your files on the server, you have to compile them using Vite <code>npm run build</code>. That will create a <code>dist</code> dir.</h4>
+</a>
+ <br />
+
+<pre><code class="language-js"><span class="hl-0">// ./server.js</span><br/><span class="hl-12">const</span><span class="hl-2"> </span><span class="hl-13">express</span><span class="hl-2"> = </span><span class="hl-5">require</span><span class="hl-2">(</span><span class="hl-4">&#39;express&#39;</span><span class="hl-2">);</span><br/><br/><span class="hl-12">const</span><span class="hl-2"> </span><span class="hl-13">app</span><span class="hl-2"> = </span><span class="hl-5">express</span><span class="hl-2">();</span><br/><br/><span class="hl-0">//Serves the /dist folder to the server</span><br/><span class="hl-3">app</span><span class="hl-2">.</span><span class="hl-5">use</span><span class="hl-2">(</span><span class="hl-3">express</span><span class="hl-2">.</span><span class="hl-5">static</span><span class="hl-2">(</span><span class="hl-3">__dirname</span><span class="hl-2"> + </span><span class="hl-4">&quot;/dist&quot;</span><span class="hl-2">));</span><br/><span class="hl-3">app</span><span class="hl-2">.</span><span class="hl-5">get</span><span class="hl-2">(</span><span class="hl-4">&#39;/&#39;</span><span class="hl-2">, (</span><span class="hl-3">req</span><span class="hl-2">, </span><span class="hl-3">res</span><span class="hl-2">) </span><span class="hl-12">=&gt;</span><span class="hl-2"> {</span><br/><span class="hl-3">res</span><span class="hl-2">.</span><span class="hl-5">sendFile</span><span class="hl-2">(</span><span class="hl-4">&#39;src/index.html&#39;</span><span class="hl-2">);</span><br/><span class="hl-2">});</span><br/><br/><span class="hl-0">//Express server </span><br/><span class="hl-3">app</span><span class="hl-2">.</span><span class="hl-5">listen</span><span class="hl-2">(</span><span class="hl-6">8090</span><span class="hl-2">, () </span><span class="hl-12">=&gt;</span><span class="hl-2"> </span><span class="hl-3">console</span><span class="hl-2">.</span><span class="hl-5">log</span><span class="hl-2">(</span><span class="hl-4">&#39;server started&#39;</span><span class="hl-2">));</span>
+</code></pre>
+</li>
+</ul>
+</div></div>
+<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+<div class="tsd-navigation settings">
+<details class="tsd-index-accordion"><summary class="tsd-accordion-summary">
+<h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4.93896 8.531L12 15.591L19.061 8.531L16.939 6.409L12 11.349L7.06098 6.409L4.93896 8.531Z" fill="var(--color-text)"></path></svg> Settings</h3></summary>
+<div class="tsd-accordion-details">
+<div class="tsd-filter-visibility">
+<h4 class="uppercase">Member Visibility</h4><form>
+<ul id="tsd-filter-options">
+<li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-protected" name="protected"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Protected</span></label></li>
+<li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-private" name="private"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Private</span></label></li>
+<li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-inherited" name="inherited" checked/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Inherited</span></label></li>
+<li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-external" name="external"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>External</span></label></li></ul></form></div>
+<div class="tsd-theme-toggle">
+<h4 class="uppercase">Theme</h4><select id="theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></div></div></details></div>
+<nav class="tsd-navigation primary">
+<details class="tsd-index-accordion" open><summary class="tsd-accordion-summary">
+<h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4.93896 8.531L12 15.591L19.061 8.531L16.939 6.409L12 11.349L7.06098 6.409L4.93896 8.531Z" fill="var(--color-text)"></path></svg> Modules</h3></summary>
+<div class="tsd-accordion-details">
+<ul>
+<li class="current selected"><a href="modules.html">Mist -<wbr/> v1.0.0</a>
+<ul></ul></li></ul></div></details></nav>
+<nav class="tsd-navigation secondary menu-sticky">
+<ul>
+<li class="tsd-kind-class"><a href="classes/Router.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><rect fill="var(--color-icon-background)" stroke="var(--color-ts-class)" stroke-width="1.5" x="1" y="1" width="22" height="22" rx="6" id="icon-128-path"></rect><path d="M11.898 16.1201C11.098 16.1201 10.466 15.8961 10.002 15.4481C9.53803 15.0001 9.30603 14.3841 9.30603 13.6001V9.64012C9.30603 8.85612 9.53803 8.24012 10.002 7.79212C10.466 7.34412 11.098 7.12012 11.898 7.12012C12.682 7.12012 13.306 7.34812 13.77 7.80412C14.234 8.25212 14.466 8.86412 14.466 9.64012H13.386C13.386 9.14412 13.254 8.76412 12.99 8.50012C12.734 8.22812 12.37 8.09212 11.898 8.09212C11.426 8.09212 11.054 8.22412 10.782 8.48812C10.518 8.75212 10.386 9.13212 10.386 9.62812V13.6001C10.386 14.0961 10.518 14.4801 10.782 14.7521C11.054 15.0161 11.426 15.1481 11.898 15.1481C12.37 15.1481 12.734 15.0161 12.99 14.7521C13.254 14.4801 13.386 14.0961 13.386 13.6001H14.466C14.466 14.3761 14.234 14.9921 13.77 15.4481C13.306 15.8961 12.682 16.1201 11.898 16.1201Z" fill="var(--color-text)" id="icon-128-text"></path></svg>Router</a></li>
+<li class="tsd-kind-class"><a href="classes/VElement.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-128-path"></use><use href="#icon-128-text"></use></svg>VElement</a></li>
+<li class="tsd-kind-interface"><a href="interfaces/Route.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><rect fill="var(--color-icon-background)" stroke="var(--color-ts-interface)" stroke-width="1.5" x="1" y="1" width="22" height="22" rx="6" id="icon-256-path"></rect><path d="M9.51 16V15.016H11.298V8.224H9.51V7.24H14.19V8.224H12.402V15.016H14.19V16H9.51Z" fill="var(--color-text)" id="icon-256-text"></path></svg>Route</a></li>
+<li class="tsd-kind-interface"><a href="interfaces/elNode.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-256-path"></use><use href="#icon-256-text"></use></svg>el<wbr/>Node</a></li>
+<li class="tsd-kind-type-alias"><a href="types/Props.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><rect fill="var(--color-icon-background)" stroke="var(--color-ts)" stroke-width="1.5" x="1" y="1" width="22" height="22" rx="6" id="icon-4194304-path"></rect><path d="M11.31 16V8.224H8.91V7.24H14.79V8.224H12.39V16H11.31Z" fill="var(--color-text)" id="icon-4194304-text"></path></svg>Props</a></li>
+<li class="tsd-kind-type-alias"><a href="types/vNode.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-4194304-path"></use><use href="#icon-4194304-text"></use></svg>v<wbr/>Node</a></li>
+<li class="tsd-kind-variable"><a href="variables/router-1.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><rect fill="var(--color-icon-background)" stroke="var(--color-ts-variable)" stroke-width="1.5" x="1" y="1" width="22" height="22" rx="6" id="icon-32-path"></rect><path d="M11.106 16L8.85 7.24H9.966L11.454 13.192C11.558 13.608 11.646 13.996 11.718 14.356C11.79 14.708 11.842 14.976 11.874 15.16C11.906 14.976 11.954 14.708 12.018 14.356C12.09 13.996 12.178 13.608 12.282 13.192L13.758 7.24H14.85L12.582 16H11.106Z" fill="var(--color-text)" id="icon-32-text"></path></svg>router</a></li>
+<li class="tsd-kind-function"><a href="functions/createApp.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><rect fill="var(--color-icon-background)" stroke="var(--color-ts-function)" stroke-width="1.5" x="1" y="1" width="22" height="22" rx="6" id="icon-64-path"></rect><path d="M9.39 16V7.24H14.55V8.224H10.446V11.128H14.238V12.112H10.47V16H9.39Z" fill="var(--color-text)" id="icon-64-text"></path></svg>create<wbr/>App</a></li>
+<li class="tsd-kind-function"><a href="functions/createRouter.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>create<wbr/>Router</a></li>
+<li class="tsd-kind-function"><a href="functions/createStore.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>create<wbr/>Store</a></li>
+<li class="tsd-kind-function"><a href="functions/force_update.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>force_<wbr/>update</a></li>
+<li class="tsd-kind-function"><a href="functions/jsxTransform.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>jsx<wbr/>Transform</a></li>
+<li class="tsd-kind-function"><a href="functions/m_for.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>m_<wbr/>for</a></li>
+<li class="tsd-kind-function"><a href="functions/m_if.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>m_<wbr/>if</a></li>
+<li class="tsd-kind-function"><a href="functions/m_if_else.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg>m_<wbr/>if_<wbr/>else</a></li></ul></nav></div></div>
+<div class="overlay"></div><script src="assets/main.js"></script></body></html>
