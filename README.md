@@ -25,3 +25,9 @@ npm run dev
 
 ## **Documenation**
 Run ./docs/index.html with [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) VSCode extension.
+
+## Authors
+Leonard Ladva
+Laura-Eliise Marrandi
+Robert Kris Laur
+Gunta Kļava
